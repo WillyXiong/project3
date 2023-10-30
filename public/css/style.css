@@ -1,0 +1,565 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: none;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+}
+
+nav {
+  padding: 1rem;
+  color: white;
+  background-color: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+}
+
+#menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+#close-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar.hidden {
+  display: none;
+}
+
+.nav-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+nav h2 {
+  align-self: end;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: red;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+h1 span {
+  color: red;
+}
+
+.content {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+h3,
+h4,
+p {
+  margin-bottom: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content a {
+  text-decoration: none;
+  color: grey;
+}
+
+section.home {
+  text-align: center;
+}
+
+ul.home-text {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+ul.home-text li {
+  text-align: center;
+}
+
+
+footer {
+  color: black;
+  background-color: none;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.footer .col h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.footer .col h4::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.col .social a {
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  text-decoration: none;
+  margin: 50px;
+  margin-top: 5px;
+
+}
+
+.col .social a:hover {
+  transform: scale(1.2);
+  color: black;
+  background: white;
+}
+
+
+.footer {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.col h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.content {
+  text-align: center;
+}
+
+.content h4 {
+  font-size: 30px;
+}
+
+.content a {
+  font-size: 20px;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Override styles for .logo */
+img.logo {
+  max-width: none;
+  height: auto;
+}
+
+h3 {
+  color: red;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+.event-form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  flex: 1;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+select,
+textarea,
+input[type="file"],
+.submit-button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 6;
+  width: 100%;
+}
+
+.submit-button {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin: 0 auto;
+  display: block;
+}
+
+.content button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.content button:hover {
+  background-color: darkred;
+}
+
+#edit-submit {
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+
+button {
+  width: 60px;
+  padding: 0.1em 0;
+}
+
+/* Add this CSS for mobile devices */
+@media (min-width: 0px) and (max-width: 1024px) {
+  .navbar {
+    display: block;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    height: 100%;
+    width: 40%;
+    background-color: red;
+    z-index: 2;
+    text-align: center;
+    overflow-x: hidden;
+    transition: right 0.3s ease;
+    /* Add smooth sliding transition */
+  }
+
+  .navbar.active {
+    right: 0;
+    /* Slide the navbar into view */
+  }
+
+  .navbar a {
+    padding: 15px;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    display: block;
+    /* Make each menu item a block element */
+  }
+
+  .menu-icon-container {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  #menu-icon {
+    display: initial;
+    color: black;
+  }
+
+}
+
+/* Center everything within the section and make h1 tags full-width */
+@media screen and (max-width: 768px) {
+  section.home {
+    text-align: center;
+  }
+
+  .home-text {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .home-text li {
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
+  }
+
+  .home-text h1 {
+    display: block;
+    font-size: 50px;
+  }
+
+  .footer .col .social {
+    text-align: left;
+    margin-right: 20px;
+  }
+
+  .col .social a {
+    margin: 20px;
+    margin-top: 5px;
+  }
+
+  .col {
+    text-align: left;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .content h4 {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .content a {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .content button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .event-form {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    flex: 2.5;
+  }
+
+  input[type="text"],
+  input[type="datetime-local"],
+  select,
+  textarea,
+  input[type="file"],
+  .submit-button {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 6;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  h2 {
+    font-size: 50px;
+  }
+
+  #event p {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content button {
+    padding: 20px 100px;
+    font-size: 30px;
+
+  }
+
+  .col a {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .footer .col h4 {
+    font-size: 25px;
+  }
+
+  .form-row {
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  #edit-submit {
+    padding: 10px 40px;
+    font-size: 30px;
+  }
+
+  .content input[type="text"],
+  .content input[type="datetime-local"],
+  .content select,
+  .content textarea,
+  .content input[type="file"],
+  .content .submit-button {
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .content label {
+    font-size: 30px;
+  }
+
+  .content #image {
+    padding: 25px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 30px;
+  }
+
+  .event-form input[type="text"],
+  .event-form input[type="datetime-local"],
+  .event-form select,
+  .event-form textarea,
+  .event-form input[type="file"],
+  .event-form .submit-button {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 2;
+    width: 100%;
+  }
+
+  .event-form label {
+    font-size: 25px;
+    flex: 1;
+  }
+
+  .content #image {
+    padding: 25px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 30px;
+  }
+
+}

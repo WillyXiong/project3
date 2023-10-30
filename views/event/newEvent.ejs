@@ -1,0 +1,58 @@
+<%- include('../partials/header.ejs')%>
+
+<div class="event-form">
+  <form action='/events' method='POST' class="new-form" enctype="multipart/form-data">
+    <div class="form-row">
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected>Select a Category</option>
+        <option value="Food Truck">Food Truck</option>
+        <option value="Activities">Activities</option>
+        <option value="Meat and Greet">Meat and Greet</option>
+        <option value="Competitions">Competitions</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <div class="form-row">
+      <label for="hostName">Host:</label>
+      <input type="text" id="hostName" name="hostName" required>
+    </div>
+
+    <div class="form-row">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required>
+    </div>
+
+    <div class="form-row">
+      <label for="startDateTime">Start Date:</label>
+      <input type="datetime-local" id="startDateTime" name="startDateTime" required>
+    </div>
+
+    <div class="form-row">
+      <label for="endDateTime">End Date:</label>
+      <input type="datetime-local" id="endDateTime" name="endDateTime" required>
+    </div>
+
+    <div class="form-row">
+      <label for="details">Details:</label>
+      <textarea id="details" name="details" rows="5" required minLength="10"></textarea>
+    </div>
+
+    <div class="form-row">
+      <label for="image">Event Image:</label>
+      <input type="file" id="image" name="image" required>
+    </div>
+
+    <div class="form-row">
+      <input type="submit" value="Submit" class="submit-button">
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/footer.ejs')%>

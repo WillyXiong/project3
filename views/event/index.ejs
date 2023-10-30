@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs')%>
+<div class="content">
+    <% if (Object.keys(groupedEvents).length) { %>
+        <% Object.keys(groupedEvents).forEach(category => { %>
+            <h4><%= category %></h4>
+            <% groupedEvents[category].forEach(event => { %>
+                <a href="/events/<%= event.id %>">
+                    <p><%= event.title %></p>
+                </a>
+            <% }); %>
+        <% }); %>
+    <% } else { %>
+        <p>There are no events to display</p>
+    <% } %>
+</div>
+<%- include('../partials/footer.ejs')%>
